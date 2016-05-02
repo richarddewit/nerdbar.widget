@@ -1,6 +1,8 @@
+bottom = true
+
 command: "echo $(/usr/local/bin/kwmc query focused)"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 500 # ms
 
 render: (output) ->
   "#{output}"
@@ -8,11 +10,11 @@ render: (output) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: #D6E7EE
-  font: 11px Osaka-Mono
+  font: 11px/16px Hack
   height: 16px
   left: 10px
   overflow: hidden
   text-overflow: ellipsis
-  top: 6px
+  #{if bottom then 'bottom' else 'top'}: 0
   width: 500px
 """

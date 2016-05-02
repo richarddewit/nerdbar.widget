@@ -1,3 +1,5 @@
+bottom = true
+
 command: "date +\"%a %d %b\""
 
 refreshFrequency: 10000
@@ -8,7 +10,7 @@ render: (output) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: #B16286
-  font: 11px Osaka-Mono
+  font: 11px/16px Hack
   right: 60px
-  top: 6px
+  #{if bottom then 'bottom' else 'top'}: 0
 """
