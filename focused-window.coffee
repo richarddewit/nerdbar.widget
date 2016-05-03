@@ -10,11 +10,10 @@ render: (output) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: #D6E7EE
-  font: 11px/16px Hack
-  height: 16px
+  font-size: 11px
+  font-family: Hack
   left: 10px
   overflow: hidden
   text-overflow: ellipsis
-  #{if bottom then 'bottom' else 'top'}: 0
-  width: 500px
+  width: 50%
 """

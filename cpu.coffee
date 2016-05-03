@@ -8,11 +8,10 @@ render: (output) ->
   "cpu <span>#{output}</span>"
 
 style: """
-  -webkit-font-smoothing: antialiased
   color: #D5C4A1
-  font: 11px/16px Hack
+  font-size: 11px
+  font-family: Hack
   right: 262px
-  #{if bottom then 'bottom' else 'top'}: 0
   span
     color: #7AAB7E
 """

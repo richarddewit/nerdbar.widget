@@ -9,8 +9,8 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #B16286
-  font: 11px/16px Hack
+  color: #D6E7EE
+  font-size: 11px
+  font-family: Hack
   right: 60px
-  #{if bottom then 'bottom' else 'top'}: 0
 """
