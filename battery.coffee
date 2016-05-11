@@ -1,18 +1,16 @@
-bottom = true
-
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'"
+command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d'%'"
 
 refreshFrequency: 150000 # ms
 
 render: (output) ->
-  "<i>⚡</i>#{output}"
+  battery = ""
+  percentage = Number(output)
+  level = Math.round(percentage / 20)
+  icon = battery[level]
+  "#{icon} #{percentage}%"
 
 style: """
-  -webkit-font-smoothing: antialiased
-  font-size: 11px
-  font-family: Hack
-  right: 145px
-  color: #FABD2F
+  right: 12em
   span
     color: #9C9486
 """

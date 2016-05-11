@@ -1,18 +1,13 @@
-bottom = true
-
 command: "ESC=`printf \"\e\"`; ps -A -o %mem | awk '{s+=$1} END {print \"\" s}'"
 
-refreshFrequency: 30000 # ms
+refreshFrequency: 10000 # ms
 
 render: (output) ->
-  "mem <span>#{output}</span>"
+  mem = parseFloat(output).toFixed(1)
+  " <span>#{mem}%</span>"
 
 style: """
-  -webkit-font-smoothing: antialiased
-  color: #D5C4A1
-  font-size: 11px
-  font-family: Hack
-  right: 198px
+  right: 17em
   span
     color: #9C9486
 """
