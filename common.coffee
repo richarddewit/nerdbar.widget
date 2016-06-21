@@ -17,4 +17,12 @@ render: ->
     font-size: 14px;
     color: #EBDBB2;
   }
+
+  i {
+    font-style: normal !important;
+  }
+
+  .icon {
+    color: #458588;
+  }
 </style>"""

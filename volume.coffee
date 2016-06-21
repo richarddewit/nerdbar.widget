@@ -6,12 +6,12 @@ render: (output) ->
   [vol, muted] = output.trim().split('\n')
   isMuted = muted is "true"
   icon = if isMuted then "" else if vol <= 50 then "" else ""
-  "#{icon} <span class='#{'muted' if isMuted}'>#{vol}%</span>"
+  "<i class=\"icon\">#{icon}</i> <span class='#{'muted' if isMuted}'>#{vol}%</span>"
 
 style: """
-  right: 29em
+  right: 32.5em
   span
-    color: #98971A
+    // color: #98971A
     &.muted
       color: #D79921
 """

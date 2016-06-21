@@ -3,6 +3,7 @@ command: "ESC=`printf \"\e\"`; ps -A -o %cpu | awk '{s+=$1} END {printf(\"%.2f\"
 refreshFrequency: 2000 # ms
 
 render: (output) ->
+  icon = ""
   cpu = parseFloat(output).toFixed(1)
   level = ''
   if cpu > 100
@@ -13,12 +14,12 @@ render: (output) ->
 
   if cpu >= 80
     level = 'critical'
-  " <span class='#{level}'>#{cpu}%</span>"
+  "<i class=\"icon\">#{icon}</i> <span class='#{level}'>#{cpu}%</span>"
 
 style: """
-  right: 23em
+  right: 26.5em
   span
-    color: #98971A
+    // color: #98971A
     &.warning
       color: #D79921
     &.critical
